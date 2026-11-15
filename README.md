@@ -1,15 +1,40 @@
-![PROVEN](https://img.shields.io/badge/PROVEN-14%2F14%20invariants-brightgreen)
-
-
 <p align="center"><img src="assets/logo.svg" alt="logo" width="400"></p>
 
-<p align="center">
-  <img src="docs/logo.png" alt="apumia-resiliency-demo" width="200"/>
-</p>
+![PROVEN](https://img.shields.io/badge/PROVEN-14%2F14%20invariants-brightgreen)
 
-<h1 align="center">apumia-resiliency-demo</h1>
+# Apumia Resiliency
 
-<p align="center"><b>Interactive demo: apumia_resiliency — 14/14 invariants, stress-tested.</b></p>
+**Append-only audit shield для PostgreSQL. 14/14 инвариантов, failover с fencing.**
 
-## Overview
-Public demo for APUM AI Fund. Flagship: [apumia_credit](https://github.com/apumiaaifund/apumia_credit).
+---
+
+## За 30 секунд
+
+**Что это:** 9 слоёв защиты: append-only аудит, failover с fencing, PII key versioning (без UPDATE), rate limiting (Redis token bucket), circuit breaker, Prometheus/Grafana, Celery worker, SDK.
+
+**Кому:** CTO / Head of Infrastructure в банке на PostgreSQL.
+
+**Почему сейчас:** pgAudit не даёт fencing и PII key versioning. Resiliency — интегрированный стек, который проходит аудит регулятора без сборки из кусков.
+
+**Что доказано:** 14/14 инвариантов PASS (exited with code 0). Load test: 10 567 RPS rate limiter, 500 audit writes через gateway.
+
+**Чего не доказано (честно):** 0 клиентов. ФСТЭК — не в коробке. SDK async — в roadmap.
+
+---
+
+## Оффер
+
+1 200 000 ₽ (код + документы + SDK + Grafana + PII versioning). Пилот с банком топ-50 — 3–7 млн ₽.
+
+**Следующий шаг:** Покажу runbook + 14 инвариантов вживую — 20 минут.
+
+---
+
+## GitHub
+
+- **Private code:** apumiaaifund/apumia-resiliency
+- **Public demo:** apumiaaifund/apumia-resiliency-demo
+
+## License
+
+MIT
